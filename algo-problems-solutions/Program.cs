@@ -1,4 +1,5 @@
-﻿using algo_problems_solutions.ProjectEuler;
+﻿using algo_problems_solutions.LeetCode;
+using algo_problems_solutions.ProjectEuler;
 using System;
 
 namespace algo_problems_solutions
@@ -24,6 +25,9 @@ namespace algo_problems_solutions
             //Fibo1000.init();
             //DistinctPowers.init();
             //SelfPowers.init();
+
+            //_02_AddTwoNumbers.init();
+            _03_LongestSubstringWithoutRepeatingChars.init();
             Console.ReadLine();
         }
     }
