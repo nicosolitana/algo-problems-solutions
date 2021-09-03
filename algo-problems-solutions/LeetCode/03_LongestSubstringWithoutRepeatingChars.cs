@@ -3,41 +3,54 @@
 namespace algo_problems_solutions.LeetCode
 {
 
-    // NOT YET DONE
+    // Problem Description : https://leetcode.com/problems/longest-substring-without-repeating-characters/
+    // Worst Case : O(N^2)
     class _03_LongestSubstringWithoutRepeatingChars
     {
+        // Time Complexity is O(N^2)
+        // Iterative approach was used to solve the problem.
+        // It's composed of nested for loops where the outer loop
+        // defines minimum index of the first character while the inner loop
+        // specifies the maximum index of the last character
         public static int LengthOfLongestSubstring(string s)
         {
-            if (string.IsNullOrEmpty(s))
-                return 0;
+            // stores the longest maximum substring
+            string longestSubstr = "";
 
-            int length;
-            int maxLength = 0;
-            string str;
+            // breaks the input string in a character array
+            char[] ch = s.ToCharArray();
 
-            char[] input = s.ToCharArray();
-
-            for (int i=0; i< s.Length; i++)
+            // loops until the end of the input string
+            for (int i = 0; i < ch.Length; i++)
             {
-                length = 0;
-                str = string.Empty;
-                for (int j = i; j < s.Length; j++)
-                {
-                    if (!str.Contains(input[j]))
-                    {
-                        length++;
-                        str += input[j].ToString();
-                    } else
-                    {
-                        length = 1;
-                        str = input[j].ToString();
-                    }
+                // breaks the loop when the length of the longest substring
+                // is greater than the remaining characters
+                if ((longestSubstr.Length) > (ch.Length - i))
+                    break;
 
-                    if (maxLength < length)
-                        maxLength = length;
+                string temp = "";
+                // loops until the end of the input string
+                // but begins using the first character of the outer loop
+                for (int j = i; j < ch.Length; j++)
+                {
+                    // breaks inner loops when the character is already existing on the longest substring
+                    if (temp.IndexOf(ch[j]) != -1)
+                    {
+                        break;
+                    }
+                    // stores the character on the substring
+                    temp += ch[j];
+                }
+
+                // Checks if current length of substring is longer than the previous one
+                if (temp.Length > longestSubstr.Length)
+                {
+                    longestSubstr = temp;
                 }
             }
-            return maxLength;
+
+            // Returns longest substring's length
+            return longestSubstr.Length;
         }
 
         public static void init()
