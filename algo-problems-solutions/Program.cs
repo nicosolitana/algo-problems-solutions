@@ -27,7 +27,8 @@ namespace algo_problems_solutions
             //SelfPowers.init();
 
             //_02_AddTwoNumbers.init();
-            _03_LongestSubstringWithoutRepeatingChars.init();
+            //_03_LongestSubstringWithoutRepeatingChars.init();
+            _04_MedianSortedArrays.init();
             Console.ReadLine();
         }
     }
