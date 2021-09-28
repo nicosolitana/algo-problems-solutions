@@ -65,6 +65,7 @@
         // perform addition operation.
         public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
+            _head = null;
             int carry = 0;
             while ((l1 != null) || (l2 != null))
             {
