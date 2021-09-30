@@ -2,7 +2,7 @@
 
 namespace algo_problems_solutions.Codility
 {
-    class TapeEquilibrium
+    class _06_TapeEquilibrium
     {
         public int Add(int[] A, int start)
         {
